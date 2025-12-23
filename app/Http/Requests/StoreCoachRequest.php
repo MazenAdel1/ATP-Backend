@@ -16,7 +16,7 @@ class StoreCoachRequest extends FormRequest
             'name' => 'required|string|max:255',
             'phone'=>'sometimes|nullable',
             'games' => 'required|array|min:1', 
-            'image'=>'nullable|image|mimes:png,jpg,svg',
+            'image'=>'nullable|image',
             'games.*' => 'exists:games,id', 
         ];
     }

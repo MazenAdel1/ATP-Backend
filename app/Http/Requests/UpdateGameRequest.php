@@ -24,7 +24,7 @@ class UpdateGameRequest extends FormRequest
         return [
             'name'=>'sometimes',
             'description'=>'sometimes|nullable',
-            'image'=>'nullable|image|mimes:png,jpg,svg',
+            'image'=>'nullable|image',
         ];
     }
 }

@@ -24,7 +24,7 @@ class StoreGameRequest extends FormRequest
         return [
             'name'=>'required',
             'description'=>'nullable',
-            'image'=>'nullable|image|mimes:png,jpg,svg',
+            'image'=>'nullable|image',
         ];
     }
 }
