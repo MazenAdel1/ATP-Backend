@@ -7,11 +7,16 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Coach extends Model implements HasMedia
-{ use InteractsWithMedia;
-    protected $fillable = ['name','phone'];
+{
+    use InteractsWithMedia;
+
+    protected $fillable = ['name', 'phone'];
+
+    protected $with = ['games'];
+
     public function games()
     {
-        return $this->belongsToMany(Game::class,'game_coach');
+        return $this->belongsToMany(Game::class, 'game_coach');
     }
     // public function getImageAttribute()
     // {

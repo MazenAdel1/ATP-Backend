@@ -29,7 +29,7 @@ class UpdateCoachRequest extends FormRequest
                 Rule::unique('coaches', 'phone')->ignore($this->coach)
             ],
 
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image',
 
             'games' => 'sometimes|nullable|array',
             'games.*' => 'exists:games,id',
