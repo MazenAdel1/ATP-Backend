@@ -17,6 +17,7 @@ class PartnerResource extends JsonResource
             'name' => $this->name,
             'links' => $this->links,
             'image' => $lastMedia ? $lastMedia->getUrl() : null,
+            'description'=>$this->description
 
         ];
     }
