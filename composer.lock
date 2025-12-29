@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3da85f72b399f33670e218441296675",
+    "content-hash": "154a18855b33d108a5570488840021ee",
     "packages": [
         {
             "name": "brick/math",
@@ -3702,6 +3702,67 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.2"
             },
             "time": "2025-12-14T04:43:48+00:00"
+        },
+        {
+            "name": "rawnoq/laravel-form-data-parser",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rawnoq/laravel-form-data-parser.git",
+                "reference": "65d9fdaf6382aa803fa1d731dabe6bef6b80e019"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rawnoq/laravel-form-data-parser/zipball/65d9fdaf6382aa803fa1d731dabe6bef6b80e019",
+                "reference": "65d9fdaf6382aa803fa1d731dabe6bef6b80e019",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.2",
+                "symfony/http-foundation": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^10.0",
+                "phpunit/phpunit": "^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rawnoq\\LaravelFormDataParser\\Providers\\FormDataParserServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rawnoq\\LaravelFormDataParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rawnoq"
+                }
+            ],
+            "description": "A Laravel package for parsing multipart/form-data requests",
+            "keywords": [
+                "file-upload",
+                "form-data",
+                "laravel",
+                "middleware",
+                "multipart",
+                "parser"
+            ],
+            "support": {
+                "issues": "https://github.com/rawnoq/laravel-form-data-parser/issues",
+                "source": "https://github.com/rawnoq/laravel-form-data-parser/tree/v1.0.0"
+            },
+            "time": "2025-11-12T16:26:14+00:00"
         },
         {
             "name": "spatie/image",
