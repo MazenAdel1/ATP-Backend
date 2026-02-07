@@ -1,0 +1,19 @@
+[package]
+name = "mohamedharbyii/ATP"
+version = "0.1.0"
+description = "Laravel Application"
+
+[dependencies]
+"php/php" = "8.3.*"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-t", "/app/public", "-S", "localhost:8080"]
+env = ["APP_ENV=production", "APP_DEBUG=true"]
