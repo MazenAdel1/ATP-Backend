@@ -31,7 +31,7 @@ class UpdatepackageRequest extends FormRequest
                 'max:255',
         
             ],
-            
+            'image'=>'nullable|image',
             'price' => ['sometimes', 'numeric', 'min:0'],
             'sessions_count' => ['sometimes', 'integer', 'min:1'],
             'description' => ['nullable', 'string'],

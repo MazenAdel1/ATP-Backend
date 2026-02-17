@@ -29,6 +29,7 @@ class StorepackageRequest extends FormRequest
             'sessions_count' => ['required', 'integer', 'min:1'],
             'description' => ['nullable', 'string'], // عملتها nullable لو الوصف مش إجباري
             'gender' => ['required', Rule::in(['male', 'female', 'both'])],
+            'image'=>'nullable|image'
         ];
     }
 }

@@ -14,15 +14,14 @@ class CoachResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $lastMedia = $this->media->last();
 
         return [
             'id' => $this->id,
             'name' => $this->name,
             'phone' => $this->phone,
-            'image' => $lastMedia ? $lastMedia->getUrl() : null,
+            'image' =>  $this->getFirstMediaUrl("coach"),
 
-            'game_name' => GameResource::collection($this->whenLoaded('games')),
+            'game' => GameResource::collection($this->whenLoaded('games')),
 
         ];
     }

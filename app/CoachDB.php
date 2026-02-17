@@ -42,7 +42,7 @@ class CoachDB
             ImageService::update($coach, 'coach');
         }
 
-        return $coach;
+        return $coach->load('games');
     }
 
     public static function delete(Coach $coach)

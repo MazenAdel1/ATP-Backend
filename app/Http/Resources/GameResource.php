@@ -14,14 +14,14 @@ class GameResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $lastMedia = $this->media->last();
 
         return [
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
             'packages_number' => $this->packages_count ?? null,
-            'image' => $lastMedia ? $lastMedia->getUrl() : null,
+            'packages'=>PackageResource::collection($this->whenLoaded('packages')),
+            'image' => $this->getFirstMediaUrl("game"),
         ];
     }
 }

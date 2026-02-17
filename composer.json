@@ -7,9 +7,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "cloudinary-labs/cloudinary-laravel": "^3.0",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
+        "rawnoq/laravel-form-data-parser": "^1.0",
         "spatie/laravel-medialibrary": "*"
     },
     "require-dev": {
@@ -78,6 +80,7 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
+        "platform-check": false,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true

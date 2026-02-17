@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Middleware\HandlePutFormData;
+use Illuminate\Http\Request;
 use App\Http\Middleware\test;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
+use App\Http\Middleware\HandlePutFormData;
+use Cloudinary\Configuration\Configuration;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Rawnoq\LaravelFormDataParser\Middleware\FormDataParser;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -20,7 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias(
             [
                 // 'test' => test::class,
-                'update-request'=>HandlePutFormData::class,
+                'update-request' => FormDataParser::class,
+                ''
             ]
         );
     })
@@ -48,4 +51,6 @@ return Application::configure(basePath: dirname(__DIR__))
                 ], 404);
             }
         });
+    })->booted(function () {
+  
     })->create();
