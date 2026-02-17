@@ -26,11 +26,12 @@ class CoachController extends Controller
     public function index()
     {
         $coaches = Coach::with(['games'])->get();
+
         return $this->sendSuccess(CoachResource::collection($coaches));
     }
 
     /**
-     * Store a newly created resource in storag
+     * Store a newly created resource in storage.
      */
     public function store(StoreCoachRequest $request)
     {

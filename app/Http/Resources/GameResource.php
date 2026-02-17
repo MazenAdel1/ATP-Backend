@@ -14,16 +14,13 @@ class GameResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
         return [
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
             'packages_number' => $this->packages_count ?? null,
             'packages'=>PackageResource::collection($this->whenLoaded('packages')),
-            'image' => $this->getFirstMediaUrl("game"),
-
-
+            'image' => $this->image_url,
         ];
     }
 }

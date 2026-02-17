@@ -9,16 +9,12 @@ class PartnerResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
-     
         return [
             'id' => $this->id,
             'name' => $this->name,
             'links' => $this->links,
-
-            'image' => $this->getFirstMediaUrl("partner"),
-
+            'image' => $this->image_url,
             'description'=>$this->description
-
         ];
     }
 }

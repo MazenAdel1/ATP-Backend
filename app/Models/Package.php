@@ -9,7 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Package extends Model implements HasMedia
 {
     use InteractsWithMedia;
-    protected $fillable = ['game_id','name','price','sessions_count','description','gender'];
+    protected $fillable = ['game_id','name','price','sessions_count','description','gender', 'image_url'];
     public function game() {
         return $this->belongsTo(Game::class);
     }

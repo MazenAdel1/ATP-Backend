@@ -21,6 +21,7 @@ class PackageResource extends JsonResource
             'sessions_count' => $this->sessions_count,
             'description' => $this->description,
             'gender' => $this->gender,
+            'image' => $this->image_url,
         ];
     }
 }

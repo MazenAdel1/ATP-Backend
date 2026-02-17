@@ -26,7 +26,9 @@ class GameDB
     {
         $game = Game::create($data);
         if (isset($data['image'])) {
-            ImageService::upload($game, 'game');
+            $imageUrl = ImageService::upload($game, 'game');
+            $game->image_url = $imageUrl;
+            $game->save();
         }
         if (isset($data['package_id'])) {
             $package = PackageDB::get_package($data['package_id']);
@@ -39,8 +41,10 @@ class GameDB
     public static function update(Game $game, $data)
     {
         $game->update($data);
-        if (isset($data['image'])) {
-            ImageService::update($game, 'game');
+         if (isset($data['image'])) {
+            $imageUrl = ImageService::update($game, 'game');
+            $game->image_url = $imageUrl;
+            $game->save();
         }
         if (isset($data['package_id'])) {
             $package = PackageDB::get_package($data['package_id']);

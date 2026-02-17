@@ -25,8 +25,9 @@ class PartnerDB
             $partner = Partner::create($data);
 
             if (isset($data['image'])) {
-                
-                ImageService::upload($partner, 'partner');
+                $imageUrl = ImageService::upload($partner, 'partner');
+                $partner->image_url = $imageUrl;
+                $partner->save();
             }
 
             return $partner;
@@ -42,7 +43,9 @@ class PartnerDB
             $partner->update($data);
 
             if (isset($data['image'])) {
-                ImageService::update($partner, 'partner');
+                $imageUrl = ImageService::update($partner, 'partner');
+                $partner->image_url = $imageUrl;
+                $partner->save();
             }
 
             return $partner;
