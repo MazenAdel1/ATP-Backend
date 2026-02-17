@@ -14,7 +14,9 @@ class PartnerResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'links' => $this->links,
+
             'image' => $this->getFirstMediaUrl("partner"),
+
             'description'=>$this->description
 
         ];

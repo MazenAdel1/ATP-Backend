@@ -22,6 +22,8 @@ class GameResource extends JsonResource
             'packages_number' => $this->packages_count ?? null,
             'packages'=>PackageResource::collection($this->whenLoaded('packages')),
             'image' => $this->getFirstMediaUrl("game"),
+
+
         ];
     }
 }

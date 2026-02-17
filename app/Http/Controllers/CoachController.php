@@ -25,8 +25,7 @@ class CoachController extends Controller
 
     public function index()
     {
-        $coaches = Coach::paginate(10);
-
+        $coaches = Coach::with(['games'])->get();
         return $this->sendSuccess(CoachResource::collection($coaches));
     }
 
