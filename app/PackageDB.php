@@ -18,7 +18,9 @@ class PackageDB
     {
         $Package = Package::create($data);
         if (isset($data['image'])) {
-            ImageService::upload($Package, 'package');
+            $imageUrl = ImageService::upload($Package, 'package');
+            $Package->image_url = $imageUrl;
+            $Package->save();
         }
 
         return $Package;
@@ -29,7 +31,9 @@ class PackageDB
     {
         $package->update($data);
         if (isset($data['image'])) {
-            ImageService::update($package, 'package');
+            $imageUrl = ImageService::update($package, 'package');
+            $package->image_url = $imageUrl;
+            $package->save();
         }
 
         return $package;

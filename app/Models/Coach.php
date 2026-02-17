@@ -10,7 +10,7 @@ class Coach extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'phone'];
+    protected $fillable = ['name', 'phone', 'image_url'];
 
     protected $with = ['games'];
 

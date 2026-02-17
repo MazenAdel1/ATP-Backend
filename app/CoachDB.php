@@ -23,7 +23,9 @@ class CoachDB
                 $coach->games()->attach($data['games']);
             }
             if (isset($data['image'])) {
-                ImageService::upload($coach, 'coach');
+                $imageUrl = ImageService::upload($coach, 'coach');
+                $coach->image_url = $imageUrl;
+                $coach->save();
             }
 
             return $coach->load(['games']);
@@ -38,8 +40,9 @@ class CoachDB
             $coach->games()->sync($data['games']);
         }
         if (isset($data['image'])) {
-
-            ImageService::update($coach, 'coach');
+            $imageUrl = ImageService::update($coach, 'coach');
+            $coach->image_url = $imageUrl;
+            $coach->save();
         }
 
         return $coach->load('games');

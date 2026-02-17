@@ -14,7 +14,7 @@ class Game extends Model implements HasMedia
 
     protected $with = ['packages'];
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'image_url'];
 
     public function packages()
     {
